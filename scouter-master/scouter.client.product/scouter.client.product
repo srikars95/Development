@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Scouter" uid="scouter.client.product" id="scouter.client.product" application="scouter.client.application" version="1.0.0" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="icons/about_dialog.png"/>
+      <text>
+         %aboutText
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgsLin>-data
+@user.home/.scouter
+      </programArgsLin>
+      <programArgsMac>-data
+@user.home/.scouter
+      </programArgsMac>
+      <programArgsWin>-data
+@user.home/scouter
+      </programArgsWin>
+      <vmArgs>-Xms128m
+-Xmx1024m
+-XX:+UseG1GC
+-Dosgi.requiredJavaVersion=11
+      </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="icons/h16.png" i32="icons/h32.png" i48="icons/h48.png" i64="icons/h64.png" i128="icons/h128.png"/>
+
+   <splash
+      location="scouter.client"
+      startupProgressRect="5,253,460,10"
+      startupMessageRect="10,235,445,15"
+      startupForegroundColor="000000" />
+   <launcher name="scouter">
+      <linux icon="icons/launcher.xpm"/>
+      <macosx icon="icons/launcher.icns"/>
+      <win useIco="true">
+         <ico path="icons/launcher.ico"/>
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="scouter.client.feature"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.e4.rcp" installMode="root"/>
+      <feature id="org.eclipse.draw2d" installMode="root"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>
